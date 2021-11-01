@@ -1,0 +1,107 @@
+activity_main.xml
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/click_here_to_change_wallpaper" />
+</RelativeLayout>
+
+
+
+MainActivity.java
+
+package com.example.lab4;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.WallpaperManager;
+import android.graphics.BitmapFactory;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    Button btnChangeWallpaper;
+
+    boolean running;
+
+    int[] imageArray = new int[]{R.drawable.a1,
+    R.drawable.a2,R.drawable.a3,R.drawable.a4,R.drawable.a5};
+
+    //int i = 1;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        btnChangeWallpaper = findViewById(R.id.button);
+        btnChangeWallpaper.setOnClickListener(this);
+    }
+
+    public void onClick(View v)
+    {
+        if (!running)
+        {
+            new Timer().schedule(new MyTimer(),10000,10000);
+            running = true;
+        }
+    }
+
+    class MyTimer extends TimerTask
+    {
+      public void run()
+      {
+           int arylength = imageArray.length;
+          Random random = new Random();
+          int rNum = random.nextInt(arylength);
+
+          try {
+              WallpaperManager wallpaperManager = WallpaperManager.getInstance(getBaseContext());
+             /* if(i==5)
+              {
+                  i=1;
+              }
+              if(i==1)
+              {
+                  i=2;
+              }
+              if(i==2)
+              {
+                  i=3;
+              }
+              if(i==3)
+              {
+                  i=4;
+              }
+              if(i==4)
+              {
+                  i=5;
+              }*/
+              wallpaperManager.setBitmap(BitmapFactory.decodeResource(getResources(),imageArray[rNum]));
+
+             // i++;
+          }
+          catch (Exception e)
+          {
+
+          }
+      }
+    }
+}

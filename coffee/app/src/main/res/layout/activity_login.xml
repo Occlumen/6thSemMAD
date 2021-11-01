@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/c2"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/txt_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/login1"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/leemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/white"
+        android:textColorHint="#E6A4A4"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/txt_login"
+        tools:layout_editor_absoluteX="10dp"
+        android:importantForAutofill="no" />
+
+
+    <EditText
+        android:id="@+id/lepassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textColor="@color/white"
+        android:hint="@string/password"
+        android:textColorHint="#E6A4A4"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/leemail"
+        app:layout_constraintStart_toStartOf="@+id/leemail"
+        app:layout_constraintTop_toBottomOf="@+id/leemail"
+        android:importantForAutofill="no" />
+
+    <Button
+        android:id="@+id/btn_login2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:shadowColor="@color/black"
+        android:text="@string/login"
+        android:backgroundTint="#BF5B54"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:iconPadding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lepassword" />
+
+    <Button
+        android:id="@+id/btn_sing2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/sign_up1"
+        android:backgroundTint="#BF5B54"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login2" />
+
+    <Button
+        android:id="@+id/btn_fp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/forgot_password"
+        android:backgroundTint="#BF5B54"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_sing2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_sing2"
+        app:layout_constraintTop_toTopOf="@+id/btn_sing2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="container">
+		<div class="row">
+			<div class="offset-xl-3 col-xl-6">
+				
+				<!-- ============================ -->
+				 <div class="rightSideAreaNews" id="rightSideAreaNews">
+          
+				          <!-- block start -->
+				          <div class="block">
+				            <div class="leftArea">
+				              <div class="dateTime">
+				                <span class="date">21</span>
+				                <span class="month-year">MAR 2020</span>
+				              </div>
+				            </div>
+				             <div class="RightDetailArea">
+				            <div class="title"><a href="#">Life is what you make it, so let’s make it.</a></div>
+				            <div class="descri">
+				              <p>
+				               At Florence we believe that Learning Illuminates Life, well - read and well-educated mindset helps children to analyze the real time situation of life and take the right decision.
+				              </p>
+				            </div>
+				            <div class="anchorBtn">
+				              <a href="#" class="btns">Read More</a>
+				            </div>
+				          </div>
+				          </div>
+				          <!-- block end -->
+				          
+				          <!-- block start -->
+				          <div class="block">
+				            <div class="leftArea">
+				              <div class="dateTime">
+				               <span class="date">21</span>
+				                <span class="month-year">MAR 2020</span>
+				              </div>
+				            </div>
+				             <div class="RightDetailArea">
+				            <div class="title"><a href="#">Life is what you make it, so let’s make it.</a></div>
+				            <div class="descri">
+				              <p>
+				               At Florence we believe that Learning Illuminates Life, well - read and well-educated mindset helps children to analyze the real time situation of life and take the right decision.
+				              </p>
+				            </div>
+				            <div class="anchorBtn">
+				              <a href="#" class="btns">Read More</a>
+				            </div>
+				          </div>
+				          </div>
+				          <!-- block end -->
+				          
+				          <!-- block start -->
+				          <div class="block">
+				            <div class="leftArea">
+				              <div class="dateTime">
+				               <span class="date">21</span>
+				                <span class="month-year">MAR 2020</span>
+				              </div>
+				            </div>
+				             <div class="RightDetailArea">
+				            <div class="title"><a href="#">Life is what you make it, so let’s make it.</a></div>
+				            <div class="descri">
+				              <p>
+				               At Florence we believe that Learning Illuminates Life, well - read and well-educated mindset helps children to analyze the real time situation of life and take the right decision.
+				              </p>
+				            </div>
+				            <div class="anchorBtn">
+				              <a href="#" class="btns">Read More</a>
+				            </div>
+				          </div>
+				          </div>
+				          <!-- block end -->
+
+				           <!-- block start -->
+				          <div class="block">
+				            <div class="leftArea">
+				              <div class="dateTime">
+				                <span class="date">21</span>
+				                <span class="month-year">MAR 2020</span>
+				              </div>
+				            </div>
+				             <div class="RightDetailArea">
+				            <div class="title"><a href="#">Life is what you make it, so let’s make it.</a></div>
+				            <div class="descri">
+				              <p>
+				               At Florence we believe that Learning Illuminates Life, well - read and well-educated mindset helps children to analyze the real time situation of life and take the right decision.
+				              </p>
+				            </div>
+				            <div class="anchorBtn">
+				              <a href="#" class="btns">Read More</a>
+				            </div>
+				          </div>
+				          </div>
+				          <!-- block end -->
+				          
+				        </div>
+				<!-- ============================ -->
+
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		var interval;
+		function ticker()
+		{
+			if($("#rightSideAreaNews .block").length > 3)
+			{
+				$("#rightSideAreaNews .block:first").slideUp(function(){
+					$(this).appendTo("#rightSideAreaNews").slideDown();
+				});
+			}
+			function stop()
+			{
+				clearInterval(interval);
+			}
+		}
+
+		$(document).ready(function(){
+				interval = setInterval(ticker,2000);
+			$("#rightSideAreaNews").hover(function(){
+				stop();
+			},function(){
+				interval = setInterval(ticker,2000);
+			});
+		});
+	</script>
+	
+</body>
+</html>
